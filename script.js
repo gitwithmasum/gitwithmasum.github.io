@@ -1,103 +1,54 @@
-/* ==========================================
-   Developer LinkHub
-   Author : Masum Billah
-========================================== */
+/* Developer LinkHub • Release 2.0.0 Foundation */
+'use strict';
 
-// ==============================
-// PAGE FADE-IN
-// ==============================
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-window.addEventListener("load", () => {
-    document.body.style.opacity = "1";
-});
-
-// ==============================
-// BUTTON RIPPLE EFFECT
-// ==============================
-
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach((button) => {
-
-    button.addEventListener("click", function (e) {
-
-        const ripple = document.createElement("span");
-
-        ripple.classList.add("ripple");
-
-        const x = e.clientX - this.offsetLeft;
-        const y = e.clientY - this.offsetTop;
-
-        ripple.style.left = `${x}px`;
-        ripple.style.top = `${y}px`;
-
-        this.appendChild(ripple);
-
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-
+// Button ripple is decorative; keyboard navigation works without it.
+if (!reduceMotion) {
+    document.querySelectorAll('.btn').forEach((button) => {
+        button.addEventListener('click', (event) => {
+            const bounds = button.getBoundingClientRect();
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            const fromPointer = event.detail !== 0;
+            ripple.style.left = `${fromPointer ? event.clientX - bounds.left : bounds.width / 2}px`;
+            ripple.style.top = `${fromPointer ? event.clientY - bounds.top : bounds.height / 2}px`;
+            ripple.setAttribute('aria-hidden', 'true');
+            button.appendChild(ripple);
+            ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
+        });
     });
+}
 
-});
+// No element is hidden while waiting for JavaScript or intersection events.
+const cards = document.querySelectorAll('.project-card');
+if (!reduceMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                instance.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.05 });
+    cards.forEach((card) => observer.observe(card));
+}
 
-// ==============================
-// SCROLL REVEAL
-// ==============================
-
-const cards = document.querySelectorAll(".project-card");
-
-const reveal = () => {
-
-    const trigger = window.innerHeight * 0.85;
-
-    cards.forEach(card => {
-
-        const top = card.getBoundingClientRect().top;
-
-        if (top < trigger) {
-
-            card.classList.add("show");
-
+const copyButton = document.querySelector('[data-copy-email]');
+const copyStatus = document.getElementById('copy-status');
+if (copyButton && copyStatus) {
+    copyButton.addEventListener('click', async () => {
+        const address = copyButton.dataset.email;
+        try {
+            if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
+            await navigator.clipboard.writeText(address);
+            copyStatus.textContent = 'Email address copied.';
+        } catch {
+            // Always give a usable fallback instead of claiming the copy succeeded.
+            copyStatus.textContent = 'Copy unavailable. Email: ' + address;
         }
-
     });
-
-};
-
-window.addEventListener("scroll", reveal);
-
-reveal();
-
-// ==============================
-// COPY EMAIL
-// ==============================
-
-const emailButton = document.querySelector('a[href^="mailto"]');
-
-if (emailButton) {
-
-    emailButton.addEventListener("contextmenu", (e) => {
-
-        e.preventDefault();
-
-        navigator.clipboard.writeText("masumtheinvincible@gmail.com");
-
-        alert("Email copied!");
-
-    });
-
 }
 
-// ==============================
-// CURRENT YEAR
-// ==============================
-
-const footer = document.querySelector("footer p");
-
-if (footer) {
-
-    footer.innerHTML =
-        `© ${new Date().getFullYear()} Muhammad Masum Billah`;
-
-}
+const year = document.getElementById('current-year');
+if (year) year.textContent = String(new Date().getFullYear());

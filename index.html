@@ -4,29 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <meta name="theme-color" content="#0F172A">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="Muhammad Masum Billah — aspiring software engineer and full-stack web developer exploring AI. Explore projects, portfolio, resume, and professional links.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gitwithmasum.github.io/">
 
-    <title> Muhammad Masum Billah | LinkHub </title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Masum Billah | Developer LinkHub">
+    <meta property="og:title" content="Muhammad Masum Billah | Developer LinkHub">
+    <meta property="og:description" content="Explore my web development projects, AI experiments, portfolio, resume, and professional profiles.">
+    <meta property="og:url" content="https://gitwithmasum.github.io/">
+    <meta property="og:image" content="https://gitwithmasum.github.io/Assets/formal%201.0.png">
+    <meta property="og:image:alt" content="Portrait of Muhammad Masum Billah">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Muhammad Masum Billah | Developer LinkHub">
+    <meta name="twitter:description" content="Projects, portfolio, resume, and links from a developer exploring AI and full-stack web development.">
 
-    <!-- Google Font -->
+    <title>Muhammad Masum Billah | Developer LinkHub</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
-
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Animated Background -->
     <div class="background"></div>
 
     <!-- Main Container -->
-    <div class="container">
+    <main class="container" id="main-content">
 
         <!-- ===========================
              PROFILE SECTION
@@ -34,7 +45,7 @@
 
         <div class="profile">
 
-            <img src="./Assets/formal 1.0.png" alt="Profile">
+            <img src="./Assets/formal%201.0.png" alt="Portrait of Muhammad Masum Billah" width="140" height="140" fetchpriority="high" decoding="async">
 
             <h1>Muhammad Masum Billah</h1>
 
@@ -51,52 +62,57 @@
              SOCIAL LINKS
         ============================ -->
 
-        <div class="links">
+        <nav class="links" aria-label="Professional and social links">
 
-            <a href="https://github.com/gitwithmasum" target="_blank" class="btn">
-                <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/gitwithmasum" target="_blank" class="btn" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
                 GitHub
             </a>
 
-            <a href="https://www.linkedin.com/in/masumtheinvincible/" class="btn">
-                <i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/masumtheinvincible/" class="btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                 LinkedIn
             </a>
 
-            <a href="https://github.com/gitwithmasum/Project-Alpha-1.0" class="btn">
-                <i class="fa-solid fa-globe"></i>
+            <a href="https://github.com/gitwithmasum/masum-billah-portfolio" class="btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
                 Portfolio
             </a>
 
-            <a href="./Assets/Update CV 2.0.pdf" class="btn">
-                <i class="fa-solid fa-file"></i>
+            <a href="./Assets/Update%20CV%202.0.pdf" class="btn">
+                <i class="fa-solid fa-file" aria-hidden="true"></i>
                 Resume
             </a>
 
-            <a href="https://www.instagram.com/masumtheinvincible/" class="btn">
-                <i class="fa-brands fa-instagram"></i>
+            <a href="https://www.instagram.com/masumtheinvincible/" class="btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 Instagram
             </a>
 
-            <a href="https://www.facebook.com/masumtheinvincible/" class="btn">
-                <i class="fa-brands fa-facebook"></i>
+            <a href="https://www.facebook.com/masumtheinvincible/" class="btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                 Facebook
             </a>
 
-            <a href="mailto: masumtheinvincible@gmail.com" class="btn">
-                <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:masumtheinvincible@gmail.com" class="btn">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                 Email
             </a>
 
-        </div>
+            <button class="btn btn-copy" type="button" data-copy-email data-email="masumtheinvincible@gmail.com" aria-describedby="copy-status">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                Copy Email Address
+            </button>
+        </nav>
+        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
 
         <!-- ===========================
              FEATURED PROJECTS
         ============================ -->
 
-        <div class="projects">
+        <section class="projects" aria-labelledby="featured-projects-heading">
 
-            <h2>Featured Projects</h2>
+            <h2 id="featured-projects-heading">Featured Projects</h2>
 
 
             <div class="project-card">
@@ -107,19 +123,19 @@
                     Aurora Nexus - Futuristic music player
                 </p>
 
-                <a href="https://gitwithmasum.github.io/Aurora-Nexus/" target="_blank">View Project →</a>
+                <a href="https://gitwithmasum.github.io/Aurora-Nexus/" target="_blank" rel="noopener noreferrer">View Project →</a>
 
             </div>
 
             <div class="project-card">
             
-                <h3>🎵 Aurora Bachelor</h3>
+                <h3>🏠 Aurora Bachelor</h3>
             
                 <p>
                     Aurora Bachelor - A local-first bachelor house management web app
                 </p>
             
-                <a href="https://gitwithmasum.github.io/Aurora-Bachelor/" target="_blank">View Project →</a>
+                <a href="https://gitwithmasum.github.io/Aurora-Bachelor/" target="_blank" rel="noopener noreferrer">View Project →</a>
             
             </div>
 
@@ -133,7 +149,7 @@
                     using HTML, CSS, Bootstrap and JavaScript.
                 </p>
 
-                <a href="https://gitwithmasum.github.io/Project-Gamma-1.0/" target="_blank">View Project →</a>
+                <a href="https://gitwithmasum.github.io/Project-Gamma-1.0/" target="_blank" rel="noopener noreferrer">View Project →</a>
 
             </div>
 
@@ -146,7 +162,7 @@
                     Bootstrap and JavaScript with modern UI and user-friendly design.
                 </p>
 
-                <a href="https://gitwithmasum.github.io/Project-Beta-1.0/" target="_blank">View Project →</a>
+                <a href="https://gitwithmasum.github.io/Project-Beta-1.0/" target="_blank" rel="noopener noreferrer">View Project →</a>
 
             </div>
 
@@ -160,7 +176,7 @@
                     <strong>🚧 Coming Soon</strong>
                 </p>
 
-                <a href="#">Coming Soon</a>
+                <span class="project-status">In planning</span>
 
             </div>
 
@@ -174,7 +190,7 @@
                     <strong>🚧 Coming Soon</strong>
                 </p>
 
-                <a href="#">Coming Soon</a>
+                <span class="project-status">In planning</span>
 
             </div>
 
@@ -188,7 +204,7 @@
                     <strong>🚧 Coming Soon</strong>
                 </p>
 
-                <a href="#">Coming Soon</a>
+                <span class="project-status">In planning</span>
 
             </div>
 
@@ -205,7 +221,7 @@
                     <strong>🚧 Coming Soon</strong>
                 </p>
 
-                <a href="#">Coming Soon</a>
+                <span class="project-status">In planning</span>
 
             </div>
             <div class="project-card">
@@ -219,11 +235,11 @@
                     <strong>🚧 Coming Soon</strong>
                 </p>
 
-                <a href="#">Coming Soon</a>
+                <span class="project-status">In planning</span>
 
             </div>
 
-        </div>
+        </section>
 
         <!-- ===========================
              FOOTER
@@ -232,12 +248,12 @@
         <footer>
 
             <p>
-                © 2026 Muhammad Masum Billah
+                © <span id="current-year">2026</span> Muhammad Masum Billah
             </p>
 
         </footer>
 
-    </div>
+    </main>
 
     <script src="./script.js"></script>
 
