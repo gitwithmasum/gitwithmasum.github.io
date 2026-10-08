@@ -150,3 +150,130 @@ a{color:inherit}button{font:inherit}
 @media(max-width:780px){.showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-grid{grid-template-columns:1fr}.top-nav{overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap;justify-content:flex-start;gap:19px;overscroll-behavior-inline:contain;padding:2px 3px 7px}.top-nav::-webkit-scrollbar{display:none}.top-nav a{flex:0 0 auto}}
 @media(max-width:560px){.showcase-grid{grid-template-columns:1fr}.showcase-card,.journey-card{padding:21px}.project-filters{gap:8px}.project-filter{padding:10px 12px}.research-note{align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){.project-filter{transition:none}.project-filter:hover{transform:none}}
+
+/* Release 2.2.1: Match Skills & Experience cards with the professional project design. */
+.showcase-section .showcase-card.glass,
+.showcase-section .journey-card.glass {
+    position: relative;
+    min-width: 0;
+    padding: 26px;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    background: linear-gradient(165deg, rgba(25,39,66,.94), rgba(12,24,43,.96));
+    box-shadow: 0 14px 37px rgba(0,0,0,.13);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+}
+.showcase-section .showcase-card.glass::before,
+.showcase-section .journey-card.glass::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(103,232,249,.78), rgba(182,160,255,.65), transparent);
+    pointer-events: none;
+}
+.showcase-section .showcase-card.glass:hover,
+.showcase-section .journey-card.glass:hover {
+    transform: translateY(-4px);
+    border-color: rgba(103,232,249,.34);
+    box-shadow: 0 22px 44px rgba(0,0,0,.23);
+}
+#skills .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    align-items: stretch;
+    gap: 19px;
+}
+#skills .showcase-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 244px;
+}
+#skills .showcase-card p { flex-grow: 1; }
+.showcase-section .showcase-icon,
+.showcase-section .journey-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(103,232,249,.25);
+    border-radius: 15px;
+    color: var(--cyan);
+    background: linear-gradient(135deg, rgba(103,232,249,.13), rgba(99,102,241,.12));
+    box-shadow: inset 0 1px rgba(255,255,255,.04);
+    font-size: 1.28rem;
+}
+.showcase-section .showcase-icon { margin-bottom: 20px; }
+#experience .journey-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 19px;
+    align-items: stretch;
+}
+#experience .journey-card { display: flex; align-items: flex-start; gap: 19px; }
+#experience .journey-content { min-width: 0; flex: 1; }
+#experience .journey-topline { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 11px; }
+#experience .journey-topline .journey-label {
+    color: #9bdff2;
+    margin: 0;
+    font-size: .7rem;
+    font-weight: 750;
+    line-height: 1.5;
+    letter-spacing: .065em;
+    text-transform: uppercase;
+}
+#experience .journey-card h3 {
+    margin: 0 0 13px;
+    font: 700 1.17rem/1.4 'Space Grotesk', sans-serif;
+    letter-spacing: -.01em;
+    color: var(--ink);
+}
+#experience .journey-card p:not(.journey-label) { margin: 0; color: var(--muted); font-size: .86rem; line-height: 1.8; }
+.journey-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 25px;
+    padding: 4px 10px;
+    border: 1px solid rgba(103,232,249,.24);
+    border-radius: 999px;
+    background: rgba(103,232,249,.09);
+    color: #a5eef6;
+    font-size: .68rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+.journey-badge--quiet { color: #d2c4ff; border-color: rgba(182,160,255,.26); background: rgba(182,160,255,.1); }
+.journey-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 21px; }
+.journey-tags span {
+    padding: 5px 10px;
+    color: #c3d3ee;
+    font-size: .69rem;
+    line-height: 1.3;
+    border-radius: 999px;
+    border: 1px solid rgba(174,192,235,.2);
+    background: rgba(255,255,255,.03);
+}
+@media (max-width: 900px) {
+    #experience .journey-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+    #skills .skill-grid { grid-template-columns: 1fr; }
+    #skills .showcase-card { min-height: 0; }
+    .showcase-section .showcase-card.glass,
+    .showcase-section .journey-card.glass { padding: 22px; }
+}
+@media (max-width: 420px) {
+    #experience .journey-card { gap: 13px; }
+    .showcase-section .journey-icon { flex-basis: 43px; width: 43px; height: 43px; border-radius: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .showcase-section .showcase-card.glass,
+    .showcase-section .journey-card.glass { transition: none; }
+    .showcase-section .showcase-card.glass:hover,
+    .showcase-section .journey-card.glass:hover { transform: none; }
+}

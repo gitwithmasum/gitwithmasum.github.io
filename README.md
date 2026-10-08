@@ -5,6 +5,13 @@
 
 A responsive developer identity hub with a futuristic midnight-galaxy, glassmorphism visual system.
 
+## Release 2.2.1 — Skills & Experience Polish
+- Corrected the Genex work entry to **Grameenphone Process — Live Chat Customer Support**
+- Added practical live-chat communication skills alongside development skills
+- Harmonized Skills and Experience cards with the rest of the dark glassmorphism design
+- Improved responsive Experience and Skills card layouts, spacing, typography, icons, and tags
+- Added a versioned CSS URL to avoid browsers reusing an outdated stylesheet
+
 ## Release 2.2.0 — Developer Showcase
 - Verified public source repositories for eight selected projects, including Masum AI Agent and Masum Galaxy CP Arena
 - Updated renamed repository links to `MB-Portfolio` and `Jurassic-IT-Park`
