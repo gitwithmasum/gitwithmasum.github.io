@@ -11,6 +11,16 @@ A responsive developer identity hub with a futuristic midnight-galaxy, glassmorp
 - `aurora-bachelor-demo.html` loads no authentication SDK, makes no API calls, does not register a service worker, and never reads/writes cookies, localStorage, sessionStorage, IndexedDB, or the household database.
 - The real [Aurora Bachelor application](https://github.com/gitwithmasum/Aurora-Bachelor) and its stored user information have not been modified or cleared.
 
+## Release v3.0.0 — Performance, SEO and Mobile Quality
+- Loads an existing, verified 49.9 KB WebP portrait from the MB-Portfolio assets, keeping the original ~2.1 MB PNG as a fallback. The original profile asset is never deleted or overwritten.
+- Preconnect to Font Awesome CDN; the current Google font CSS keeps its display=swap behavior.
+- schema.org Person / WebSite structured data; updated sitemap lastmod for the homepage.
+- Branded accessible noindex 404 page with safe return links.
+- Reproducible 12-check Node.js audit (`node tools/audit-site.cjs`) and automated GitHub Actions checks.
+- Preserves all projects, source/demo links, pilot-study PDFs, v2.6 themes, v2.4 project search, v2.3 mobile navigation, and separate privacy-safe Aurora Bachelor Guest Demo.
+- No backend, user session, auth or database changes. CSS cache version bumped to v3.0.0, while JavaScript remains unchanged.
+- **Scope:** offline/CI validation, not a measured Lighthouse score or direct mobile visual/browser audit. External demo availability still needs live testing.
+
 ## Release v2.6.0 — Aurora Light Theme + Accessibility
 - Added an accessible header theme switch between the original **Midnight Galaxy** (default) and a contrast-aware **Aurora Light** style.
 - Visitor theme preference is stored only as `masum-linkhub-theme-v1` on the LinkHub's own origin. It does not read, update or erase authentication/session keys, household data or any backend records.
