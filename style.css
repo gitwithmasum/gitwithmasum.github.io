@@ -125,3 +125,28 @@ a{color:inherit}button{font:inherit}
 @media(max-width:560px){.shell{width:calc(100% - 24px)}.site-header{margin:12px 0 15px}.brand{font-size:.97rem;gap:8px}.brand-mark{width:35px;height:35px;border-radius:10px}.top-nav a{font-size:.78rem}.hero{padding:29px 22px;border-radius:20px}.hero h1{font-size:clamp(2rem,9vw,2.75rem)}.hero-role{font-size:.86rem}.hero-description{font-size:.87rem}.hero-actions .btn{flex:1 1 145px;padding:12px 10px}.hero-detail{gap:10px 15px}.hero-visual{min-height:270px}.portrait-stage{width:255px}.quick-grid,.projects-grid{grid-template-columns:1fr}.quick-card{min-height:84px}.social-strip{align-items:flex-start;flex-direction:column}.social-actions{gap:12px 19px}.copy-status{text-align:left}.section-heading{gap:10px}.section-subtitle{margin-top:0}.project-art{height:132px}.site-footer{justify-content:center;text-align:center}}
 @media(max-width:350px){.shell{width:calc(100% - 16px)}.site-header{padding:10px}.header-github span{display:none}.top-nav{gap:7px}.top-nav a{font-size:.72rem}.hero{padding:25px 17px}.hero h1{font-size:1.88rem}.portrait-stage{width:220px}.visual-caption{letter-spacing:.12em}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.quick-card,.project-card,.top-nav a{transition:none}.btn:hover,.quick-card:hover,.project-card:hover{transform:none}.ripple,.project-card.is-visible{animation:none!important}}
+/* Release 2.2.0 · Developer Showcase */
+[hidden]{display:none!important}
+.project-filters{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:0 0 14px}
+.project-filter{min-height:42px;padding:10px 15px;border:1px solid rgba(170,201,234,.23);border-radius:999px;background:rgba(17,29,51,.78);color:#d4e3f4;font:600 .8rem/1.2 Inter,system-ui,sans-serif;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.project-filter span{margin-left:3px;opacity:.7}
+.project-filter:hover{border-color:var(--cyan);transform:translateY(-1px)}
+.project-filter.is-active{background:linear-gradient(105deg,#75e6f7,#a6b3ff);border-color:transparent;color:#07111e}
+.filter-status{margin:0;color:var(--muted);font-size:.82rem}
+.filter-status:not(:empty){margin:0 0 18px}
+.showcase-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.showcase-card{border-radius:20px;padding:25px;min-width:0}
+.showcase-icon{display:grid;place-items:center;width:49px;height:49px;color:var(--cyan);border-radius:14px;border:1px solid rgba(103,232,249,.22);background:rgba(103,232,249,.09);font-size:1.28rem;margin-bottom:20px}
+.showcase-card h3,.journey-card h3{margin:0 0 11px;font:700 1.16rem/1.4 'Space Grotesk',sans-serif;overflow-wrap:anywhere}
+.showcase-card p,.journey-card p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.75}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:20px 0 0;padding:0}
+.skill-tags li{border-radius:999px;border:1px solid rgba(174,192,235,.19);padding:6px 10px;background:rgba(255,255,255,.035);color:#d2e5fa;font-size:.72rem}
+.journey-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.journey-card{border-radius:20px;padding:25px;display:flex;gap:18px;align-items:flex-start;min-width:0}
+.journey-icon{display:grid;place-items:center;flex:0 0 46px;width:46px;height:46px;background:rgba(103,232,249,.09);border:1px solid rgba(103,232,249,.2);border-radius:13px;color:var(--cyan)}
+.journey-card .journey-label{color:#9bdff2;margin:0 0 7px;font-weight:700;letter-spacing:.04em;font-size:.72rem;text-transform:uppercase}
+.research-note{display:flex;align-items:baseline;gap:9px;color:var(--muted);font-size:.84rem;margin:19px 0 0;line-height:1.7}
+.research-note i{color:var(--cyan)}
+@media(max-width:780px){.showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-grid{grid-template-columns:1fr}.top-nav{overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap;justify-content:flex-start;gap:19px;overscroll-behavior-inline:contain;padding:2px 3px 7px}.top-nav::-webkit-scrollbar{display:none}.top-nav a{flex:0 0 auto}}
+@media(max-width:560px){.showcase-grid{grid-template-columns:1fr}.showcase-card,.journey-card{padding:21px}.project-filters{gap:8px}.project-filter{padding:10px 12px}.research-note{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){.project-filter{transition:none}.project-filter:hover{transform:none}}

@@ -31,7 +31,7 @@
 <div class="shell">
 <header class="site-header glass">
 <a href="#top" class="brand" aria-label="Masum Developer Hub home"><span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-code"></i></span><span>MASUM<span class="brand-accent">.DEV</span></span></a>
-<nav class="top-nav" aria-label="Main navigation"><a href="#main-content">Home</a><a href="#projects">Projects</a><a href="#links">Links</a><a href="#contact">Contact</a></nav>
+<nav class="top-nav" aria-label="Main navigation"><a href="#main-content">Home</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#contact">Contact</a></nav>
 <a class="header-github" href="https://github.com/gitwithmasum" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
 </header>
 <main id="main-content">
@@ -53,7 +53,7 @@
 <div class="section-heading"><div><p class="section-kicker">01 / CONNECT</p><h2 id="links-heading">Find me online<span class="heading-period">.</span></h2></div><p class="section-intro">Everything important, one click away.</p></div>
 <div class="quick-grid"><a class="quick-card" href="https://github.com/gitwithmasum" target="_blank" rel="noopener noreferrer" aria-label="GitHub — Open-source work"><span class="quick-icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span class="quick-copy"><strong>GitHub</strong><small>Open-source work</small></span><i class="fa-solid fa-arrow-up-right-from-square quick-arrow" aria-hidden="true"></i></a>
 <a class="quick-card" href="https://www.linkedin.com/in/masumtheinvincible/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — Professional profile"><span class="quick-icon" aria-hidden="true"><i class="fa-brands fa-linkedin-in"></i></span><span class="quick-copy"><strong>LinkedIn</strong><small>Professional profile</small></span><i class="fa-solid fa-arrow-up-right-from-square quick-arrow" aria-hidden="true"></i></a>
-<a class="quick-card" href="https://github.com/gitwithmasum/masum-billah-portfolio" target="_blank" rel="noopener noreferrer" aria-label="Portfolio — Explore more work"><span class="quick-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span><span class="quick-copy"><strong>Portfolio</strong><small>Explore more work</small></span><i class="fa-solid fa-arrow-up-right-from-square quick-arrow" aria-hidden="true"></i></a>
+<a class="quick-card" href="https://github.com/gitwithmasum/MB-Portfolio" target="_blank" rel="noopener noreferrer" aria-label="Portfolio — Explore more work"><span class="quick-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span><span class="quick-copy"><strong>Portfolio</strong><small>Explore more work</small></span><i class="fa-solid fa-arrow-up-right-from-square quick-arrow" aria-hidden="true"></i></a>
 <a class="quick-card" href="./Assets/Update%20CV%202.0.pdf" aria-label="Resume — View current file"><span class="quick-icon" aria-hidden="true"><i class="fa-regular fa-file-pdf"></i></span><span class="quick-copy"><strong>Resume</strong><small>View current file</small></span><i class="fa-solid fa-arrow-up-right-from-square quick-arrow" aria-hidden="true"></i></a></div>
 <div class="social-strip glass"><span class="strip-title">Let's connect</span><div class="social-actions">
 <a href="mailto:masumtheinvincible@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
@@ -64,53 +64,94 @@
 </section>
 <section id="projects" class="section projects" aria-labelledby="projects-heading">
 <div class="section-heading"><div><p class="section-kicker">02 / THE WORK</p><h2 id="projects-heading">Selected projects<span class="heading-period">.</span></h2></div><a class="all-projects" href="https://github.com/gitwithmasum?tab=repositories" target="_blank" rel="noopener noreferrer">All repositories <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
-<p class="section-subtitle">Things I’m building and experimenting with. Existing demo URLs are provided for reference; availability can vary.</p>
-<div class="projects-grid"><article class="project-card" aria-labelledby="project-1">
+<p class="section-subtitle">Projects with verified public GitHub repositories. Demo URLs are project-maintained references and have not been independently checked here.</p>
+<div class="project-filters" id="project-filters" role="group" aria-label="Filter projects by category" hidden>
+<button type="button" class="project-filter is-active" data-project-filter="all" aria-pressed="true">All <span aria-hidden="true">08</span></button>
+<button type="button" class="project-filter" data-project-filter="web" aria-pressed="false">Web</button>
+<button type="button" class="project-filter" data-project-filter="apps" aria-pressed="false">Apps</button>
+<button type="button" class="project-filter" data-project-filter="ai" aria-pressed="false">AI / Python</button>
+<button type="button" class="project-filter" data-project-filter="tools" aria-pressed="false">Dev Tools</button>
+</div>
+<p class="filter-status" id="project-filter-status" role="status" aria-live="polite"></p>
+<div class="projects-grid"><article class="project-card" data-category="web" aria-labelledby="project-1">
  <div class="project-art art-gold" aria-hidden="true"><span class="art-grid"></span><i class="fa-solid fa-spray-can-sparkles"></i><span class="art-orbit"></span></div>
  <div class="project-content"><p class="project-type">Perfume · E-commerce</p><h3 id="project-1">Aurora Essence</h3>
  <p class="project-description">A fragrance storefront focused on product presentation and a premium browsing experience.</p>
  <div class="project-tags" aria-label="Project topics"><span>Web development</span><span>E-commerce</span></div>
  <div class="project-actions"><a href="https://github.com/gitwithmasum/Aurora-Essence" target="_blank" rel="noopener noreferrer" aria-label="View Aurora Essence source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a>
  </div></div></article>
-<article class="project-card" aria-labelledby="project-2">
+<article class="project-card" data-category="apps" aria-labelledby="project-2">
  <div class="project-art art-cyan" aria-hidden="true"><span class="art-grid"></span><i class="fa-solid fa-house"></i><span class="art-orbit"></span></div>
  <div class="project-content"><p class="project-type">Web app · House management</p><h3 id="project-2">Aurora Bachelor</h3>
  <p class="project-description">A bachelor-house management web app created around practical everyday workflows.</p>
  <div class="project-tags" aria-label="Project topics"><span>Web app</span><span>Product UI</span></div>
  <div class="project-actions"><a href="https://github.com/gitwithmasum/Aurora-Bachelor" target="_blank" rel="noopener noreferrer" aria-label="View Aurora Bachelor source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a>
  <a href="https://gitwithmasum.github.io/Aurora-Bachelor/" target="_blank" rel="noopener noreferrer" aria-label="Visit Aurora Bachelor demo">View demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></div></article>
-<article class="project-card" aria-labelledby="project-3">
+<article class="project-card" data-category="apps" aria-labelledby="project-3">
  <div class="project-art art-purple" aria-hidden="true"><span class="art-grid"></span><i class="fa-solid fa-headphones"></i><span class="art-orbit"></span></div>
  <div class="project-content"><p class="project-type">Creative tech · Music player</p><h3 id="project-3">Aurora Nexus</h3>
  <p class="project-description">A futuristic music player interface exploring interactive visuals and audio experiences.</p>
  <div class="project-tags" aria-label="Project topics"><span>Frontend</span><span>Music</span></div>
  <div class="project-actions"><a href="https://github.com/gitwithmasum/Aurora-Nexus" target="_blank" rel="noopener noreferrer" aria-label="View Aurora Nexus source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a>
  <a href="https://gitwithmasum.github.io/Aurora-Nexus/" target="_blank" rel="noopener noreferrer" aria-label="Visit Aurora Nexus demo">View demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></div></article>
-<article class="project-card" aria-labelledby="project-4">
+<article class="project-card" data-category="web" aria-labelledby="project-4">
  <div class="project-art art-blue" aria-hidden="true"><span class="art-grid"></span><i class="fa-solid fa-laptop-code"></i><span class="art-orbit"></span></div>
- <div class="project-content"><p class="project-type">Frontend · Learning project</p><h3 id="project-4">Responsive Website</h3>
- <p class="project-description">Responsive web development built with HTML, CSS, Bootstrap and JavaScript.</p>
+ <div class="project-content"><p class="project-type">Web platform · Tech education</p><h3 id="project-4">Jurassic IT Park</h3>
+ <p class="project-description">A responsive tech-learning platform showcasing courses, learning paths, and a frontend enrollment demonstration.</p>
  <div class="project-tags" aria-label="Project topics"><span>HTML / CSS</span><span>Bootstrap</span></div>
- <div class="project-actions"><a href="https://github.com/gitwithmasum/Project-Gamma-1.0" target="_blank" rel="noopener noreferrer" aria-label="View Responsive Website source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a>
- <a href="https://gitwithmasum.github.io/Project-Gamma-1.0/" target="_blank" rel="noopener noreferrer" aria-label="Visit Responsive Website demo">View demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></div></article>
-<article class="project-card" aria-labelledby="project-5">
+ <div class="project-actions"><a href="https://github.com/gitwithmasum/Jurassic-IT-Park" target="_blank" rel="noopener noreferrer" aria-label="View Responsive Website source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a>
+ <a href="https://gitwithmasum.github.io/Jurassic-IT-Park/" target="_blank" rel="noopener noreferrer" aria-label="Visit Responsive Website demo">View demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></div></article>
+<article class="project-card" data-category="web" aria-labelledby="project-5">
  <div class="project-art art-rose" aria-hidden="true"><span class="art-grid"></span><i class="fa-solid fa-cart-shopping"></i><span class="art-orbit"></span></div>
  <div class="project-content"><p class="project-type">Frontend · Shopping UI</p><h3 id="project-5">E-Commerce App</h3>
  <p class="project-description">A responsive e-commerce interface built with HTML, CSS, Bootstrap and JavaScript.</p>
  <div class="project-tags" aria-label="Project topics"><span>JavaScript</span><span>UI design</span></div>
  <div class="project-actions"><a href="https://github.com/gitwithmasum/Project-Beta-1.0" target="_blank" rel="noopener noreferrer" aria-label="View E-Commerce App source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a>
  <a href="https://gitwithmasum.github.io/Project-Beta-1.0/" target="_blank" rel="noopener noreferrer" aria-label="Visit E-Commerce App demo">View demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></div></article>
-<article class="project-card" aria-labelledby="project-6">
+<article class="project-card" data-category="tools" aria-labelledby="project-6">
  <div class="project-art art-indigo" aria-hidden="true"><span class="art-grid"></span><i class="fa-solid fa-code"></i><span class="art-orbit"></span></div>
  <div class="project-content"><p class="project-type">Developer tools · Customization</p><h3 id="project-6">Galaxy VS Code Themes</h3>
  <p class="project-description">A VS Code customization project exploring a distinctive developer workspace aesthetic.</p>
  <div class="project-tags" aria-label="Project topics"><span>VS Code</span><span>Developer tools</span></div>
  <div class="project-actions"><a href="https://github.com/gitwithmasum/Galaxy-VS-Code-Themes" target="_blank" rel="noopener noreferrer" aria-label="View Galaxy VS Code Themes source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a>
- </div></div></article></div>
+ </div></div></article><article class="project-card" data-category="ai" aria-labelledby="project-7">
+ <div class="project-art art-purple" aria-hidden="true"><span class="art-grid"></span><i class="fa-solid fa-robot"></i><span class="art-orbit"></span></div>
+ <div class="project-content"><p class="project-type">AI · Python · In development</p><h3 id="project-7">Masum AI Agent</h3>
+ <p class="project-description">A local-first Python AI assistant exploring Ollama, conversation memory and web-search tools.</p>
+ <div class="project-tags" aria-label="Project topics"><span>Python</span><span>AI agents</span><span>Ollama</span></div>
+ <div class="project-actions"><a href="https://github.com/gitwithmasum/Masum-AI-Agent" target="_blank" rel="noopener noreferrer" aria-label="View Masum AI Agent source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a></div></div></article>
+<article class="project-card" data-category="tools" aria-labelledby="project-8">
+ <div class="project-art art-indigo" aria-hidden="true"><span class="art-grid"></span><i class="fa-solid fa-terminal"></i><span class="art-orbit"></span></div>
+ <div class="project-content"><p class="project-type">Developer tools · VS Code extension</p><h3 id="project-8">Masum Galaxy CP Arena</h3>
+ <p class="project-description">A competitive-programming VS Code toolkit featuring local judging, snippets, contest workflows and stress-testing tools.</p>
+ <div class="project-tags" aria-label="Project topics"><span>VS Code</span><span>JavaScript</span><span>Competitive programming</span></div>
+ <div class="project-actions"><a href="https://github.com/gitwithmasum/MG-VS-Code-CP-Arena" target="_blank" rel="noopener noreferrer" aria-label="View Masum Galaxy CP Arena source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a></div></div></article>
+</div>
 <div class="roadmap glass" aria-labelledby="roadmap-heading"><div class="roadmap-heading"><i class="fa-solid fa-rocket" aria-hidden="true"></i><div><h3 id="roadmap-heading">On the roadmap</h3><p>Ideas and planned builds, not released products.</p></div></div>
 <ul class="roadmap-list"><li>Weather App</li><li>To-Do App</li><li>Calculator</li><li>AI Chatbot</li><li>Expense Tracker</li></ul></div>
 </section>
-<section id="contact" class="section contact-section" aria-labelledby="contact-heading"><div class="contact-card glass"><div><p class="section-kicker">03 / SAY HELLO</p><h2 id="contact-heading">Have an idea to share<span class="heading-period">?</span></h2><p>Whether it’s a project, a collaboration, or a conversation about tech, feel free to reach out.</p></div><a class="btn btn-primary" href="mailto:masumtheinvincible@gmail.com"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send an Email</a></div></section>
+<section id="skills" class="section showcase-section" aria-labelledby="skills-heading">
+<div class="section-heading"><div><p class="section-kicker">03 / CAPABILITIES</p><h2 id="skills-heading">Skills &amp; tools<span class="heading-period">.</span></h2></div><p class="section-intro">Hands-on work and ongoing learning, clearly separated.</p></div>
+<div class="showcase-grid skill-grid">
+<article class="showcase-card glass"><div class="showcase-icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div><h3>Web development</h3><p>Technologies used across personal websites and responsive frontend projects.</p><ul class="skill-tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap</li></ul></article>
+<article class="showcase-card glass"><div class="showcase-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div><h3>Developer workflow</h3><p>Tools used to build, publish, maintain and customize coding projects.</p><ul class="skill-tags"><li>Git</li><li>GitHub</li><li>VS Code</li><li>GitHub Pages</li></ul></article>
+<article class="showcase-card glass"><div class="showcase-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div><h3>Currently learning</h3><p>Exploring Python-based agents and the foundations of intelligent systems.</p><ul class="skill-tags"><li>Python</li><li>AI agents</li><li>Machine learning</li><li>Deep learning</li></ul></article>
+</div></section>
+<section id="experience" class="section showcase-section" aria-labelledby="experience-heading">
+<div class="section-heading"><div><p class="section-kicker">04 / JOURNEY</p><h2 id="experience-heading">Experience &amp; education<span class="heading-period">.</span></h2></div></div>
+<div class="journey-grid">
+<article class="journey-card glass"><div class="journey-icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></div><div><p class="journey-label">Customer service experience</p><h3>Genex Infosys · Airtel process</h3><p>Supported customers with service questions, issue handling and communication through customer-care operations.</p></div></article>
+<article class="journey-card glass"><div class="journey-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div><div><p class="journey-label">University studies</p><h3>Bangladesh University of Business and Technology (BUBT)</h3><p>Continuing university studies while developing hands-on software projects and exploring AI and research.</p></div></article>
+</div></section>
+<section id="research" class="section showcase-section" aria-labelledby="research-heading">
+<div class="section-heading"><div><p class="section-kicker">05 / EXPLORATION</p><h2 id="research-heading">Research interests<span class="heading-period">.</span></h2></div><p class="section-intro">Questions I'm exploring as I learn.</p></div>
+<div class="showcase-grid research-grid">
+<article class="showcase-card glass"><div class="showcase-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div><h3>Artificial intelligence</h3><p>How intelligent assistants and AI systems can help people solve practical problems.</p></article>
+<article class="showcase-card glass"><div class="showcase-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div><h3>Machine learning</h3><p>Learning about data, models, evaluation and reproducible experiments.</p></article>
+<article class="showcase-card glass"><div class="showcase-icon"><i class="fa-solid fa-earth-asia" aria-hidden="true"></i></div><h3>Climate &amp; global warming</h3><p>Exploring environmental data and possible ways technology can support climate research.</p></article>
+</div><p class="research-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> These are study and research interests, not a list of published or peer-reviewed papers.</p>
+</section>
+<section id="contact" class="section contact-section" aria-labelledby="contact-heading"><div class="contact-card glass"><div><p class="section-kicker">06 / SAY HELLO</p><h2 id="contact-heading">Have an idea to share<span class="heading-period">?</span></h2><p>Whether it’s a project, a collaboration, or a conversation about tech, feel free to reach out.</p></div><a class="btn btn-primary" href="mailto:masumtheinvincible@gmail.com"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send an Email</a></div></section>
 </main>
 <footer class="site-footer"><p>© <span id="current-year">2026</span> Muhammad Masum Billah</p><p>Designed to build, learn &amp; create.</p><a href="#top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a></footer>
 </div>

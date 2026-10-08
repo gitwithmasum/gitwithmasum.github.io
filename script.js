@@ -52,3 +52,33 @@ if (copyButton && copyStatus) {
 
 const year = document.getElementById('current-year');
 if (year) year.textContent = String(new Date().getFullYear());
+
+
+// Release 2.2.0: progressive enhancement for accessible project filtering.
+// All projects remain visible when JavaScript is disabled.
+const filterContainer = document.getElementById('project-filters');
+const filterStatus = document.getElementById('project-filter-status');
+const filterButtons = Array.from(document.querySelectorAll('[data-project-filter]'));
+
+if (filterContainer && filterStatus && filterButtons.length && cards.length) {
+    const applyProjectFilter = (category) => {
+        let visible = 0;
+        cards.forEach((card) => {
+            const matches = category === 'all' || card.dataset.category === category;
+            card.hidden = !matches;
+            if (matches) visible += 1;
+        });
+        filterButtons.forEach((button) => {
+            const active = button.dataset.projectFilter === category;
+            button.setAttribute('aria-pressed', String(active));
+            button.classList.toggle('is-active', active);
+        });
+        filterStatus.textContent = `Showing ${visible} of ${cards.length} projects`;
+    };
+
+    filterButtons.forEach((button) => {
+        button.addEventListener('click', () => applyProjectFilter(button.dataset.projectFilter));
+    });
+    applyProjectFilter('all');
+    filterContainer.hidden = false;
+}

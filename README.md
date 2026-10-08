@@ -5,6 +5,16 @@
 
 A responsive developer identity hub with a futuristic midnight-galaxy, glassmorphism visual system.
 
+## Release 2.2.0 — Developer Showcase
+- Verified public source repositories for eight selected projects, including Masum AI Agent and Masum Galaxy CP Arena
+- Updated renamed repository links to `MB-Portfolio` and `Jurassic-IT-Park`
+- Accessible project filters for All, Web, Apps, AI/Python and Developer Tools; JavaScript-disabled visitors still see every project
+- Skills grouped as hands-on web work, developer workflow and clearly labeled ongoing learning
+- Short professional experience and university education sections without unverified dates or degree labels
+- AI, machine learning and climate/global warming research interests explicitly **not** represented as published papers
+- Preserved Release 2.0.0 SEO/accessibility and 2.1.0 visual design
+- Some project demo URLs have not been independently tested; source repository verification does not guarantee live demo availability
+
 ## Release 2.1.0 — Design Refresh
 - Two-column introductory hero, existing profile portrait, and clear project/resume actions
 - MASUM.DEV brand navigation and consistent visual tokens
@@ -23,7 +33,7 @@ A responsive developer identity hub with a futuristic midnight-galaxy, glassmorp
 ## Files
 - `index.html` — semantic markup, content, links, and SEO
 - `style.css` — responsive visual system, cards, and accessibility
-- `script.js` — decorative ripple/reveal, Copy Email, and footer year
+- `script.js` — decorative ripple/reveal, accessible project filters, Copy Email, and footer year
 - `Assets/` — existing profile PNG and resume PDF
 - `favicon.svg`, `robots.txt`, `sitemap.xml`, `LICENSE`
 
@@ -42,6 +52,6 @@ After changes reach the `main` branch, check GitHub Pages under [Actions](https:
 - Optimize the original ~2 MB profile image without compromising appearance
 - Manually test on mobile, with a keyboard, and with reduced motion
 - Run Lighthouse on the deployed site; targets do not replace measured scores
-- Future releases can add skills, experience, project filters, and research
+- Consider future releases for verified publications, actual project screenshots and more advanced portfolio features
 
 © Muhammad Masum Billah. See LICENSE for license terms.
