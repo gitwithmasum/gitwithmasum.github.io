@@ -11,6 +11,15 @@ A responsive developer identity hub with a futuristic midnight-galaxy, glassmorp
 - `aurora-bachelor-demo.html` loads no authentication SDK, makes no API calls, does not register a service worker, and never reads/writes cookies, localStorage, sessionStorage, IndexedDB, or the household database.
 - The real [Aurora Bachelor application](https://github.com/gitwithmasum/Aurora-Bachelor) and its stored user information have not been modified or cleared.
 
+## Release v2.4.0 — Advanced Project Showcase
+- Instant client-side search across eight existing public projects by name, technology and description.
+- Search and category filters work together; sort by featured order, name A–Z or demo links first.
+- Clear search, reset filters, zero-result feedback and live results status for accessible operation.
+- Card status labels distinguish Demo link, Aurora Bachelor Guest preview and Source only. These labels do not claim demos were independently tested.
+- Responsive search toolbar; controls are enabled only after JavaScript loads, with all projects visible without JS.
+- All original project source/demo links, content, mobile menu, Skills, Experience and Research preserved.
+- Versioned CSS/JS assets for v2.4.0.
+
 ## Release v2.3.0 — Mobile Navigation + Hero Polish
 - Converted the mobile horizontal navigation to a touch-friendly two-column hamburger menu on screens <=780px; narrower screens use one column.
 - Accessibility: button `aria-expanded`, `aria-controls`, live active-section indicator, close on Escape/outside click/link activation, and focus restoration on Escape.

@@ -54,32 +54,85 @@ const year = document.getElementById('current-year');
 if (year) year.textContent = String(new Date().getFullYear());
 
 
-// Release 2.2.0: progressive enhancement for accessible project filtering.
-// All projects remain visible when JavaScript is disabled.
+// Release v2.4.0: accessible, combined filters/search/sorting.
+// Without JavaScript, all project cards stay visible.
 const filterContainer = document.getElementById('project-filters');
 const filterStatus = document.getElementById('project-filter-status');
 const filterButtons = Array.from(document.querySelectorAll('[data-project-filter]'));
+const projectToolbar = document.getElementById('project-toolbar');
+const projectSearch = document.getElementById('project-search');
+const projectSearchClear = document.getElementById('project-search-clear');
+const projectSort = document.getElementById('project-sort');
+const projectGrid = document.querySelector('.projects-grid');
+const projectEmpty = document.getElementById('project-empty');
+const projectEmptyReset = document.getElementById('project-empty-reset');
+const projectCards = Array.from(cards);
 
-if (filterContainer && filterStatus && filterButtons.length && cards.length) {
-    const applyProjectFilter = (category) => {
+if (filterContainer && filterStatus && filterButtons.length &&
+    projectToolbar && projectSearch && projectSearchClear && projectSort &&
+    projectGrid && projectEmpty && projectEmptyReset && projectCards.length) {
+    const originalOrder = new Map(projectCards.map((card, index) => [card, index]));
+    const searchIndex = new Map(projectCards.map((card) => [card, [
+        card.querySelector('h3')?.textContent || '',
+        card.querySelector('.project-type')?.textContent || '',
+        card.querySelector('.project-description')?.textContent || '',
+        card.querySelector('.project-tags')?.textContent || ''
+    ].join(' ').toLocaleLowerCase()]));
+    let activeCategory = 'all';
+    const renderProjects = () => {
+        const query = projectSearch.value.trim().toLocaleLowerCase();
+        const mode = projectSort.value;
         let visible = 0;
-        cards.forEach((card) => {
-            const matches = category === 'all' || card.dataset.category === category;
-            card.hidden = !matches;
-            if (matches) visible += 1;
+        const ordered = projectCards.slice().sort((a, b) => {
+            if (mode === 'name') {
+                return (a.querySelector('h3')?.textContent || '').localeCompare(
+                    b.querySelector('h3')?.textContent || '') ||
+                    originalOrder.get(a) - originalOrder.get(b);
+            }
+            if (mode === 'demo') {
+                const demoA = a.dataset.preview === 'source' ? 1 : 0;
+                const demoB = b.dataset.preview === 'source' ? 1 : 0;
+                return demoA - demoB || originalOrder.get(a) - originalOrder.get(b);
+            }
+            return originalOrder.get(a) - originalOrder.get(b);
+        });
+        ordered.forEach((card) => projectGrid.appendChild(card));
+        projectCards.forEach((card) => {
+            const matchesCategory = activeCategory === 'all' ||
+                card.dataset.category === activeCategory;
+            const matchesQuery = !query || searchIndex.get(card).includes(query);
+            card.hidden = !(matchesCategory && matchesQuery);
+            if (!card.hidden) visible += 1;
         });
         filterButtons.forEach((button) => {
-            const active = button.dataset.projectFilter === category;
+            const active = button.dataset.projectFilter === activeCategory;
             button.setAttribute('aria-pressed', String(active));
             button.classList.toggle('is-active', active);
         });
-        filterStatus.textContent = `Showing ${visible} of ${cards.length} projects`;
+        projectSearchClear.hidden = projectSearch.value.length === 0;
+        projectEmpty.hidden = visible !== 0;
+        filterStatus.textContent = 'Showing ' + visible + ' of ' + projectCards.length + ' projects';
     };
-
-    filterButtons.forEach((button) => {
-        button.addEventListener('click', () => applyProjectFilter(button.dataset.projectFilter));
+    filterButtons.forEach((button) => button.addEventListener('click', () => {
+        activeCategory = button.dataset.projectFilter;
+        renderProjects();
+    }));
+    projectSearch.addEventListener('input', renderProjects);
+    projectSort.addEventListener('change', renderProjects);
+    projectSearchClear.addEventListener('click', () => {
+        projectSearch.value = '';
+        renderProjects();
+        projectSearch.focus();
     });
-    applyProjectFilter('all');
+    projectEmptyReset.addEventListener('click', () => {
+        activeCategory = 'all';
+        projectSearch.value = '';
+        projectSort.value = 'featured';
+        renderProjects();
+        projectSearch.focus();
+    });
+    renderProjects();
+    projectToolbar.hidden = false;
     filterContainer.hidden = false;
 }
 
