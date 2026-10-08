@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#081422">
+<meta name="description" content="Aurora Bachelor read-only guest preview with fictional sample data. No login or real household data.">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Aurora Bachelor | Privacy-Safe Guest Demo</title>
+<style>
+:root{color-scheme:dark;--bg:#06101d;--card:#101f32;--line:#244059;--text:#edf6ff;--muted:#adc2d3;--cyan:#76e9f8;--purple:#c3abff}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse 55% 48% at 90% 5%,#24365f77,transparent),radial-gradient(ellipse 55% 40% at 20% 90%,#113e4877,transparent),var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}
+.skip{position:absolute;left:14px;top:-70px;background:white;color:#101726;padding:10px;border-radius:8px;z-index:4}
+.skip:focus{top:14px}
+:where(a,button):focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.workspace{width:min(1380px,calc(100% - 36px));margin:18px auto;display:grid;grid-template-columns:245px minmax(0,1fr);gap:20px}
+.glass{background:linear-gradient(155deg,#182943e8,#0d2031ea);border:1px solid #29445e;border-radius:20px;box-shadow:0 20px 35px #0003}
+.sidebar{padding:24px 17px;align-self:start;position:sticky;top:18px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;font-weight:800;letter-spacing:.08em;line-height:1.3;font-size:1rem}
+.brand-symbol{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(140deg,#2459a0,#09a7ad);font-size:1.12rem;color:white;box-shadow:0 0 25px #00d5ff33}
+.brand small{display:block;font-size:.65rem;letter-spacing:.18em;color:var(--cyan);margin-top:4px}
+.side-caption{margin:37px 10px 11px;font-size:.68rem;letter-spacing:.17em;color:#9db5c7;font-weight:800}
+.nav-list{display:grid;gap:7px}
+.nav-button{border:1px solid transparent;background:transparent;text-align:left;color:#bdd0e1;font:650 .89rem/1.3 inherit;display:flex;align-items:center;gap:13px;padding:13px;border-radius:11px;cursor:pointer;width:100%;transition:background .18s,border-color .18s}
+.nav-button:hover,.nav-button.active{color:white;background:#1c3a52;border-color:#3e6375}
+.nav-icon{color:var(--cyan);font-size:1.2rem;width:23px;text-align:center}
+.side-note{margin-top:29px;border-radius:13px;border:1px solid #285264;background:#0b2a37;padding:15px;font-size:.76rem;color:#b7e1df}
+.side-note strong{display:block;color:#9df0db;margin-bottom:4px}
+.side-return{display:block;margin:21px 10px 0;color:var(--cyan);text-decoration:none;font-size:.84rem;font-weight:700}
+.main{min-width:0;display:grid;gap:17px;align-content:start}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:19px 25px}
+.topbar strong{display:block;font-size:.95rem}
+.topbar p{color:var(--muted);font-size:.77rem;margin:2px 0 0}
+.guest{display:flex;align-items:center;gap:9px;color:#b5f2e3;font-weight:750;font-size:.74rem;white-space:nowrap}
+.guest-avatar{display:grid;place-items:center;border-radius:50%;width:36px;height:36px;border:1px solid #4d91a6;background:#15566a;color:#fff}
+.hero{position:relative;overflow:hidden;padding:31px;border-radius:21px;border:1px solid #335474;background:linear-gradient(110deg,#112943,#21365b 62%,#102437)}
+.hero::after{content:"";position:absolute;width:260px;height:260px;border:1px solid #7ce0ee55;border-radius:50%;right:-50px;top:-135px;pointer-events:none}
+.overline{margin:0 0 9px;color:#87ecf8;letter-spacing:.17em;font-size:.67rem;font-weight:800}
+.hero h1{font-size:clamp(1.6rem,3vw,2.25rem);margin:0 0 9px;line-height:1.25;letter-spacing:-.03em}
+.hero p:not(.overline){color:#c7d8e9;margin:0;max-width:680px;font-size:.87rem}
+.hero .hero-badges{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.hero-badges span{display:inline-flex;border-radius:50px;background:#173951;border:1px solid #387188;padding:5px 11px;color:#caf4fa;font-size:.7rem;font-weight:700}
+.view-panel{min-width:0}
+.view-panel[hidden]{display:none!important}
+.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:13px;margin:12px 0 17px}
+.panel-heading h2{font-size:1.52rem;line-height:1.3;margin:0;letter-spacing:-.02em}
+.demo-chip,.tag{font-size:.68rem;font-weight:800;border-radius:999px;padding:6px 11px;border:1px solid #315969;background:#153548;color:#9fe8ef}
+.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.stat{padding:21px;min-width:0}
+.stat-head{display:flex;justify-content:space-between;gap:10px;color:#afc6da;font-size:.75rem;font-weight:650}
+.stat-symbol{font-size:1.2rem;color:#70edfc}
+.stat strong{display:block;font-size:clamp(1.4rem,2.7vw,2rem);font-weight:800;letter-spacing:-.04em;margin:11px 0 1px}
+.stat small{font-size:.71rem;color:#9ab4c7}
+.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:16px}
+.pane{padding:23px;min-width:0}
+.pane-head{display:flex;align-items:center;gap:12px;justify-content:space-between;margin-bottom:15px}
+.pane h3{font-size:1.02rem;line-height:1.35;margin:0}
+.muted{color:var(--muted);font-size:.83rem;margin:4px 0 18px}
+.bar-chart{margin-top:30px;display:flex;align-items:flex-end;justify-content:space-around;height:158px;gap:12px}
+.bar-chart div{flex:1;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;color:#b2c7db;font-size:.72rem}
+.bar-chart i{height:var(--level);max-height:110px;width:min(55%,46px);min-width:12px;border-radius:8px 8px 3px 3px;background:linear-gradient(#8aebff,#4767c7);box-shadow:0 0 17px #00ddff22}
+.bar-chart b{font-weight:700}
+.line-item{display:flex;justify-content:space-between;gap:13px;padding:11px 0;border-bottom:1px solid #304961;color:#bbd0df;font-size:.83rem}
+.line-item strong{color:#f0f7ff}
+.line-item.last{border-bottom:0;font-weight:750;color:var(--cyan)}
+.people-grid{display:grid;gap:10px}
+.person{display:flex;align-items:center;gap:14px;border:1px solid #28475d;padding:15px;border-radius:13px;background:#13263b}
+.avatar{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;background:#1c5a75;color:#c9faff;border-radius:50%;font-weight:800}
+.person div{display:grid}
+.person div small{color:var(--muted)}
+.status{margin-left:auto;border-radius:20px;padding:4px 10px;background:#144b3c;color:#a9efce;font-size:.7rem}
+.table-scroll{max-width:100%;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:440px;text-align:left;font-size:.8rem}
+th,td{padding:13px 11px;border-bottom:1px solid #284459;white-space:nowrap}
+th{color:#a7ecf5;font-weight:700}
+td{color:#d5e6f5}
+tfoot th{border-bottom:0}
+.two-stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:16px}
+.notice{border:1px solid #295777;border-radius:13px;padding:16px;background:#0c2f40;color:#c0e9ef;font-size:.85rem}
+.notice.compact{margin-top:20px}
+.footer{display:flex;flex-wrap:wrap;gap:15px;justify-content:space-between;color:#8ba9bf;font-size:.74rem;padding:5px 5px 25px}
+.footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:1040px){.workspace{grid-template-columns:210px minmax(0,1fr)}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}}
+@media(max-width:700px){.workspace{display:block;width:calc(100% - 22px);margin:11px auto}.sidebar{position:static;padding:16px;margin-bottom:15px}.side-caption{margin:20px 8px 8px}.nav-list{display:flex;overflow-x:auto;gap:7px;padding-bottom:4px}.nav-button{width:auto;flex:none;white-space:nowrap;padding:10px 12px}.side-note{margin-top:11px}.side-return{margin:13px 7px 0}.topbar{padding:16px}.main{gap:13px}.hero{padding:24px}.panel-heading{margin:8px 0 14px}}
+@media(max-width:420px){.stats-grid{grid-template-columns:1fr}.topbar{align-items:flex-start}.guest{font-size:.67rem}.stat{padding:17px}.pane{padding:17px}.hero{padding:19px}.panel-heading{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav-button{transition:none}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to guest preview</a>
+<div class="workspace">
+<aside class="sidebar glass" aria-label="Guest demo navigation">
+ <a href="https://gitwithmasum.github.io/" class="brand"><span class="brand-symbol">AB</span><span>AURORA BACHELOR<small>HOUSE MANAGEMENT OS</small></span></a>
+ <p class="side-caption">PREVIEW MODULES</p>
+ <nav class="nav-list" aria-label="Preview sections"><button class="nav-button active" type="button" data-view="dashboard" aria-pressed="true" id="tab-dashboard"><span class="nav-icon" aria-hidden="true">◈</span>Dashboard</button>
+<button class="nav-button" type="button" data-view="members" aria-pressed="false" id="tab-members"><span class="nav-icon" aria-hidden="true">♙</span>Members</button>
+<button class="nav-button" type="button" data-view="meals" aria-pressed="false" id="tab-meals"><span class="nav-icon" aria-hidden="true">◫</span>Meal Tracker</button>
+<button class="nav-button" type="button" data-view="expenses" aria-pressed="false" id="tab-expenses"><span class="nav-icon" aria-hidden="true">▥</span>Expenses</button>
+<button class="nav-button" type="button" data-view="settlement" aria-pressed="false" id="tab-settlement"><span class="nav-icon" aria-hidden="true">⇄</span>Settlement</button></nav>
+ <div class="side-note"><strong>✓ PRIVACY-SAFE DEMO</strong>Sample records only. This preview never connects to a real account, database or household.</div>
+ <a href="https://gitwithmasum.github.io/" class="side-return">← Back to Developer Hub</a>
+</aside>
+<div class="main">
+ <header class="topbar glass"><div><strong>AURORA // PUBLIC PREVIEW</strong><p>Interactive interface · fictional data · no authentication</p></div><div class="guest"><span class="guest-avatar">G</span> GUEST</div></header>
+ <main id="main">
+ <section class="hero"><p class="overline">A PRIVATE APP WITH A PUBLIC PREVIEW</p><h1>Household management, reimagined.</h1><p>Explore the layout of Aurora Bachelor without signing in. The dashboard, member profiles and financial figures below are made-up examples. Your real Aurora information stays inside the original application.</p><div class="hero-badges"><span>Fictional data</span><span>Read-only interface</span><span>No Google account</span></div></section>
+ <section class="view-panel" data-panel="dashboard" aria-labelledby="tab-dashboard" ><div class="panel-heading"><div><p class="overline">AURORA / SAMPLE WORKSPACE</p><h2>Dashboard</h2></div><span class="demo-chip">READ ONLY</span></div>
+<div class="stats-grid">
+ <article class="stat glass"><div class="stat-head"><span>Residents</span><span class="stat-symbol">♙</span></div><strong>03</strong><small>Fictional members</small></article>
+ <article class="stat glass"><div class="stat-head"><span>Meals recorded</span><span class="stat-symbol">◫</span></div><strong>126</strong><small>Illustrative monthly total</small></article>
+ <article class="stat glass"><div class="stat-head"><span>Meal expenses</span><span class="stat-symbol">৳</span></div><strong>৳7,840</strong><small>Example total</small></article>
+ <article class="stat glass"><div class="stat-head"><span>House bills</span><span class="stat-symbol">▦</span></div><strong>৳4,600</strong><small>Example total</small></article>
+</div>
+<div class="two-col">
+ <article class="pane glass"><div class="pane-head"><h3>Meal activity</h3><span class="tag">Illustrative</span></div><p class="muted">Example meal counts for a fictional month.</p><div class="bar-chart" aria-label="Example meal counts: Week one 28, week two 32, week three 38, week four 28">
+ <div><span>W1</span><i style="--level:74%"></i><b>28</b></div>
+ <div><span>W2</span><i style="--level:84%"></i><b>32</b></div>
+ <div><span>W3</span><i style="--level:100%"></i><b>38</b></div>
+ <div><span>W4</span><i style="--level:74%"></i><b>28</b></div>
+ </div></article>
+ <article class="pane glass"><div class="pane-head"><h3>House overview</h3><span class="tag">Sample</span></div>
+ <div class="line-item"><span>Rent allocation</span><strong>৳12,000</strong></div>
+ <div class="line-item"><span>Utility expenses</span><strong>৳4,600</strong></div>
+ <div class="line-item"><span>Meal expenses</span><strong>৳7,840</strong></div>
+ <div class="line-item last"><span>Illustrative expenses</span><strong>৳24,440</strong></div>
+ </article>
+</div></section>
+<section class="view-panel" data-panel="members" aria-labelledby="tab-members" hidden><div class="panel-heading"><div><p class="overline">AURORA / SAMPLE WORKSPACE</p><h2>Members</h2></div><span class="demo-chip">READ ONLY</span></div><article class="pane glass"><div class="pane-head"><h3>Household members</h3><span class="tag">3 sample profiles</span></div><p class="muted">No names, emails, or images from any real member account are loaded.</p><div class="people-grid">
+ <div class="person"><span class="avatar">G1</span><div><strong>Guest One</strong><small>Sample resident</small></div><span class="status">Active</span></div>
+ <div class="person"><span class="avatar">G2</span><div><strong>Guest Two</strong><small>Sample resident</small></div><span class="status">Active</span></div>
+ <div class="person"><span class="avatar">G3</span><div><strong>Guest Three</strong><small>Sample resident</small></div><span class="status">Active</span></div>
+</div></article></section>
+<section class="view-panel" data-panel="meals" aria-labelledby="tab-meals" hidden><div class="panel-heading"><div><p class="overline">AURORA / SAMPLE WORKSPACE</p><h2>Meal Tracker</h2></div><span class="demo-chip">READ ONLY</span></div><article class="pane glass"><div class="pane-head"><h3>Meal ledger</h3><span class="tag">Fictional entries</span></div><p class="muted">Illustration of how monthly meal tracking can be organized.</p><div class="table-scroll"><table><thead><tr><th>Member</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th><th>Total</th></tr></thead><tbody>
+<tr><td>Guest One</td><td>9</td><td>17</td><td>16</td><td>42</td></tr>
+<tr><td>Guest Two</td><td>12</td><td>14</td><td>16</td><td>42</td></tr>
+<tr><td>Guest Three</td><td>10</td><td>15</td><td>17</td><td>42</td></tr>
+</tbody><tfoot><tr><th>Sample total</th><th>31</th><th>46</th><th>49</th><th>126</th></tr></tfoot></table></div></article></section>
+<section class="view-panel" data-panel="expenses" aria-labelledby="tab-expenses" hidden><div class="panel-heading"><div><p class="overline">AURORA / SAMPLE WORKSPACE</p><h2>Expense Overview</h2></div><span class="demo-chip">READ ONLY</span></div><div class="two-col"><article class="pane glass"><div class="pane-head"><h3>Meal expenses</h3><span class="tag">Example</span></div><div class="line-item"><span>Groceries</span><strong>৳4,200</strong></div><div class="line-item"><span>Rice and staples</span><strong>৳2,240</strong></div><div class="line-item"><span>Cooking supplies</span><strong>৳1,400</strong></div><div class="line-item last"><span>Meal total</span><strong>৳7,840</strong></div></article>
+<article class="pane glass"><div class="pane-head"><h3>Utility breakdown</h3><span class="tag">Example</span></div><div class="line-item"><span>Electricity</span><strong>৳1,800</strong></div><div class="line-item"><span>Internet</span><strong>৳1,200</strong></div><div class="line-item"><span>Gas</span><strong>৳1,600</strong></div><div class="line-item last"><span>Bill total</span><strong>৳4,600</strong></div></article></div></section>
+<section class="view-panel" data-panel="settlement" aria-labelledby="tab-settlement" hidden><div class="panel-heading"><div><p class="overline">AURORA / SAMPLE WORKSPACE</p><h2>Settlement</h2></div><span class="demo-chip">READ ONLY</span></div><div class="stats-grid two-stats"><article class="stat glass"><div class="stat-head"><span>Illustrative shared expenses</span><span class="stat-symbol">৳</span></div><strong>৳24,440</strong><small>Three fictional members</small></article><article class="stat glass"><div class="stat-head"><span>Approx. split / resident</span><span class="stat-symbol">⇄</span></div><strong>৳8,146.67</strong><small>Equal-share illustration only</small></article></div><article class="pane glass"><div class="pane-head"><h3>Settlement preview</h3><span class="tag">No real payments</span></div><p class="muted">This screen demonstrates the look of a settlement summary only. Actual balances are calculated in the authenticated application, not here.</p><div class="notice compact"><span aria-hidden="true">◈</span> No transaction can be created, modified, or submitted from this preview.</div></article></section>
+ </main>
+ <footer class="footer"><span>© Aurora Bachelor · Guest preview only</span><span>Nothing entered, stored, synced, or changed.</span><a href="https://github.com/gitwithmasum/Aurora-Bachelor" target="_blank" rel="noopener noreferrer">Source repository ↗</a></footer>
+</div>
+</div>
+<script>
+"use strict";
+(function () {
+  const buttons = Array.from(document.querySelectorAll("[data-view]"));
+  const panels = Array.from(document.querySelectorAll("[data-panel]"));
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selection = button.dataset.view;
+      buttons.forEach((item) => {
+        const active = item.dataset.view === selection;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+      panels.forEach((pane) => { pane.hidden = pane.dataset.panel !== selection; });
+      document.getElementById("main").scrollIntoView({block:"start", behavior:"auto"});
+    });
+  });
+})();
+</script>
+</body>
+</html>

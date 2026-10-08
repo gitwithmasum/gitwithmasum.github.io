@@ -5,6 +5,12 @@
 
 A responsive developer identity hub with a futuristic midnight-galaxy, glassmorphism visual system.
 
+## Aurora Bachelor privacy-safe guest demo
+- [Open guest preview](https://gitwithmasum.github.io/aurora-bachelor-demo.html) — a separate, read-only interactive preview using fictional sample records.
+- The Aurora Bachelor **View demo** card now opens this public preview, **not** the authenticated application URL.
+- `aurora-bachelor-demo.html` loads no authentication SDK, makes no API calls, does not register a service worker, and never reads/writes cookies, localStorage, sessionStorage, IndexedDB, or the household database.
+- The real [Aurora Bachelor application](https://github.com/gitwithmasum/Aurora-Bachelor) and its stored user information have not been modified or cleared.
+
 ## Release 2.2.1 — Skills & Experience Polish
 - Corrected the Genex work entry to **Grameenphone Process — Live Chat Customer Support**
 - Added practical live-chat communication skills alongside development skills
