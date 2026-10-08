@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080F1F">
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="dark light">
 <meta name="description" content="Muhammad Masum Billah — aspiring software engineer and full-stack web developer exploring AI. Explore projects, portfolio, resume, and professional links.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://gitwithmasum.github.io/">
@@ -24,7 +24,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="stylesheet" href="./style.css?v=2.5.0">
+<script>
+/* Apply the saved theme before CSS paints to avoid a light/dark flash. */
+try {
+  if (localStorage.getItem('masum-linkhub-theme-v1') === 'light') {
+    document.documentElement.dataset.theme = 'light';
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#eaf5fc');
+  }
+} catch (_) { /* Storage may be unavailable; Midnight Galaxy remains the default. */ }
+</script>
+<link rel="stylesheet" href="./style.css?v=2.6.0">
 </head>
 <body id="top">
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -36,6 +45,10 @@
 </button>
 <nav class="top-nav" id="primary-navigation" aria-label="Main navigation"><a href="#main-content">Home</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#contact">Contact</a></nav>
 <a class="header-github" href="https://github.com/gitwithmasum" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+<button class="theme-toggle" type="button" id="theme-toggle" aria-pressed="false" aria-label="Switch to Aurora Light theme" title="Switch to Aurora Light theme">
+<span class="theme-toggle-icon" aria-hidden="true"><i class="fa-solid fa-sun"></i></span>
+<span class="theme-toggle-text">Aurora Light</span>
+</button>
 </header>
 <main id="main-content">
 <section class="hero glass" aria-labelledby="hero-heading">
@@ -245,6 +258,6 @@
 </main>
 <footer class="site-footer"><p>© <span id="current-year">2026</span> Muhammad Masum Billah</p><p>Designed to build, learn &amp; create.</p><a href="#top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a></footer>
 </div>
-<script src="./script.js?v=2.4.0"></script>
+<script src="./script.js?v=2.6.0"></script>
 </body>
 </html>

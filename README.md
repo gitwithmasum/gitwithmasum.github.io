@@ -11,6 +11,15 @@ A responsive developer identity hub with a futuristic midnight-galaxy, glassmorp
 - `aurora-bachelor-demo.html` loads no authentication SDK, makes no API calls, does not register a service worker, and never reads/writes cookies, localStorage, sessionStorage, IndexedDB, or the household database.
 - The real [Aurora Bachelor application](https://github.com/gitwithmasum/Aurora-Bachelor) and its stored user information have not been modified or cleared.
 
+## Release v2.6.0 — Aurora Light Theme + Accessibility
+- Added an accessible header theme switch between the original **Midnight Galaxy** (default) and a contrast-aware **Aurora Light** style.
+- Visitor theme preference is stored only as `masum-linkhub-theme-v1` on the LinkHub's own origin. It does not read, update or erase authentication/session keys, household data or any backend records.
+- Small pre-CSS initialization script restores Aurora Light before paint to avoid an incorrect initial flash; failed/blocked storage safely falls back to Midnight Galaxy.
+- Updated browser theme-color, aria-pressed, icon, title and spoken label when the button changes modes. Native button works by click, touch, Enter and Space.
+- Refined visible focus outlines, minimum 44px project links, responsive header controls, mobile touch targets and section scrolling offsets.
+- Preserved all projects, demo URLs, v2.4 search/sort, v2.3 mobile navigation, v2.5 career/research manuscripts, and the privacy-safe Aurora Bachelor guest preview.
+- Asset cache-busting CSS/JS paths moved to v2.6.0; no change to any other repository or persisted personal data.
+
 ## Release v2.5.0 — Professional Experience Timeline + Research Showcase
 - Added an accessible, responsive experience/education/project-work milestone timeline with no fabricated job dates, titles or degree details.
 - Preserved the user-confirmed **Genex Infosys · Grameenphone Process — Live Chat** experience, university BUBT details, and the original project links.

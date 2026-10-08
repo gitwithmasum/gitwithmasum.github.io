@@ -236,3 +236,42 @@ if (mobileMenuButton && primaryNavigation && navigationHeader && sectionNavLinks
     mobileMenuButton.hidden = false;
     document.documentElement.classList.add('has-js-nav');
 }
+
+
+// Release v2.6.0 — switchable public-site theme.
+// Only the preference key is stored; never read or modify login/session/app data.
+const themeToggle = document.getElementById('theme-toggle');
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+const themePreferenceKey = 'masum-linkhub-theme-v1';
+
+if (themeToggle) {
+    const themeIcon = themeToggle.querySelector('.theme-toggle-icon i');
+    const themeText = themeToggle.querySelector('.theme-toggle-text');
+
+    const applySiteTheme = (theme, persist = false) => {
+        const light = theme === 'light';
+        document.documentElement.dataset.theme = light ? 'light' : 'dark';
+        themeToggle.setAttribute('aria-pressed', String(light));
+        const nextThemeLabel = light ? 'Switch to Midnight Galaxy theme' : 'Switch to Aurora Light theme';
+        themeToggle.setAttribute('aria-label', nextThemeLabel);
+        themeToggle.setAttribute('title', nextThemeLabel);
+        if (themeText) themeText.textContent = light ? 'Midnight Galaxy' : 'Aurora Light';
+        if (themeIcon) {
+            themeIcon.classList.toggle('fa-moon', light);
+            themeIcon.classList.toggle('fa-sun', !light);
+        }
+        if (themeColorMeta) {
+            themeColorMeta.setAttribute('content', light ? '#eaf5fc' : '#080F1F');
+        }
+        if (persist) {
+            try { localStorage.setItem(themePreferenceKey, light ? 'light' : 'dark'); }
+            catch (_) { /* Theme works in this tab even when storage is denied. */ }
+        }
+    };
+
+    applySiteTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+    themeToggle.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+        applySiteTheme(next, true);
+    });
+}
