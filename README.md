@@ -11,6 +11,14 @@ A responsive developer identity hub with a futuristic midnight-galaxy, glassmorp
 - `aurora-bachelor-demo.html` loads no authentication SDK, makes no API calls, does not register a service worker, and never reads/writes cookies, localStorage, sessionStorage, IndexedDB, or the household database.
 - The real [Aurora Bachelor application](https://github.com/gitwithmasum/Aurora-Bachelor) and its stored user information have not been modified or cleared.
 
+## Release v2.3.0 — Mobile Navigation + Hero Polish
+- Converted the mobile horizontal navigation to a touch-friendly two-column hamburger menu on screens <=780px; narrower screens use one column.
+- Accessibility: button `aria-expanded`, `aria-controls`, live active-section indicator, close on Escape/outside click/link activation, and focus restoration on Escape.
+- Progressive enhancement: mobile links remain visible and horizontally scrollable if JavaScript is unavailable.
+- Refined hero layout, portrait glow, focus tags, mobile action sizing, and low-cost CSS ambient animations with reduced-motion support.
+- Versioned CSS and JS URLs to avoid stale browser caches.
+- Existing project filters, portfolio / demo URLs, résumé, profile image, experience, research interests and privacy-safe Aurora Bachelor guest demo preserved.
+
 ## Release 2.2.1 — Skills & Experience Polish
 - Corrected the Genex work entry to **Grameenphone Process — Live Chat Customer Support**
 - Added practical live-chat communication skills alongside development skills

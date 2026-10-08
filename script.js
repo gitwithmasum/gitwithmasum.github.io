@@ -82,3 +82,104 @@ if (filterContainer && filterStatus && filterButtons.length && cards.length) {
     applyProjectFilter('all');
     filterContainer.hidden = false;
 }
+
+
+// Release v2.3.0 — progressive enhancement for mobile navigation.
+// If JS is unavailable, the original horizontal navigation stays visible.
+const mobileMenuButton = document.getElementById('nav-toggle');
+const primaryNavigation = document.getElementById('primary-navigation');
+const navigationHeader = document.querySelector('.site-header');
+const mobileMenuQuery = window.matchMedia('(max-width: 780px)');
+const sectionNavLinks = primaryNavigation
+    ? Array.from(primaryNavigation.querySelectorAll('a[href^="#"]'))
+    : [];
+
+if (mobileMenuButton && primaryNavigation && navigationHeader && sectionNavLinks.length) {
+    const label = mobileMenuButton.querySelector('.nav-toggle-text');
+    const icon = mobileMenuButton.querySelector('.nav-toggle-icon i');
+
+    const closeOrOpenMenu = (requestedOpen, restoreFocus = false) => {
+        const opened = Boolean(requestedOpen && mobileMenuQuery.matches);
+        primaryNavigation.classList.toggle('is-open', opened);
+        mobileMenuButton.setAttribute('aria-expanded', String(opened));
+        mobileMenuButton.setAttribute('aria-label', opened ? 'Close navigation menu' : 'Open navigation menu');
+        if (label) label.textContent = opened ? 'Close' : 'Menu';
+        if (icon) {
+            icon.classList.toggle('fa-bars', !opened);
+            icon.classList.toggle('fa-xmark', opened);
+        }
+        if (!opened && restoreFocus) mobileMenuButton.focus();
+    };
+
+    mobileMenuButton.addEventListener('click', () => {
+        closeOrOpenMenu(mobileMenuButton.getAttribute('aria-expanded') !== 'true');
+    });
+
+    sectionNavLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            if (!mobileMenuQuery.matches) return;
+            closeOrOpenMenu(false);
+            const hash = link.getAttribute('href');
+            const target = hash && document.getElementById(hash.slice(1));
+            if (target) {
+                // The previously focused link becomes hidden when the menu closes.
+                target.setAttribute('tabindex', '-1');
+                target.focus({ preventScroll: true });
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && mobileMenuButton.getAttribute('aria-expanded') === 'true') {
+            closeOrOpenMenu(false, true);
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (mobileMenuQuery.matches && !navigationHeader.contains(event.target)) {
+            closeOrOpenMenu(false);
+        }
+    });
+
+    const resetMenuOnResize = () => closeOrOpenMenu(false);
+    if (mobileMenuQuery.addEventListener) {
+        mobileMenuQuery.addEventListener('change', resetMenuOnResize);
+    } else if (mobileMenuQuery.addListener) {
+        mobileMenuQuery.addListener(resetMenuOnResize);
+    }
+
+    // Indicate the current in-page section without changing any routes or hrefs.
+    const updateActiveSection = () => {
+        const threshold = Math.min(window.innerHeight * 0.33, 185);
+        let activeLink = sectionNavLinks[0];
+        sectionNavLinks.forEach((link) => {
+            const section = document.getElementById(link.getAttribute('href').slice(1));
+            if (section && section.getBoundingClientRect().top <= threshold) activeLink = link;
+        });
+        sectionNavLinks.forEach((link) => {
+            const selected = link === activeLink;
+            link.classList.toggle('is-active', selected);
+            if (selected) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
+        });
+    };
+
+    let navScrollQueued = false;
+    const scheduleActiveNavUpdate = () => {
+        if (navScrollQueued) return;
+        navScrollQueued = true;
+        window.requestAnimationFrame(() => {
+            navScrollQueued = false;
+            updateActiveSection();
+        });
+    };
+    window.addEventListener('scroll', scheduleActiveNavUpdate, { passive: true });
+    window.addEventListener('resize', scheduleActiveNavUpdate);
+    window.addEventListener('hashchange', scheduleActiveNavUpdate);
+    updateActiveSection();
+
+    // Enable the responsive collapsed state only after every handler exists.
+    closeOrOpenMenu(false);
+    mobileMenuButton.hidden = false;
+    document.documentElement.classList.add('has-js-nav');
+}
