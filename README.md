@@ -1,43 +1,47 @@
-# Muhammad Masum Billah — Developer LinkHub
+# Muhammad Masum Billah — Professional LinkHub
 
-Live website: https://gitwithmasum.github.io/
+**Website:** https://gitwithmasum.github.io/  
+**Stack:** HTML · CSS · Vanilla JavaScript · GitHub Pages
 
-A lightweight, responsive personal link hub showcasing professional profiles, selected development projects, and a downloadable resume. Hosted on GitHub Pages.
+A responsive developer identity hub with a futuristic midnight-galaxy, glassmorphism visual system.
+
+## Release 2.1.0 — Design Refresh
+- Two-column introductory hero, existing profile portrait, and clear project/resume actions
+- MASUM.DEV brand navigation and consistent visual tokens
+- Lightweight CSS-only galaxy accents, rounded glass surfaces, cyan/indigo gradients
+- Responsive professional link cards, social links, and Copy Email
+- Six selected project cards, illustrated with icons/CSS rather than unverified screenshots
+- Source links to GitHub and existing demo URLs where available
+- Five unreleased project ideas shown in a compact **On the roadmap** list
+- Preserved Release 2.0.0 SEO, canonical/social metadata, keyboard focus, reduced-motion support, and content visibility without JavaScript
 
 ## Release 2.0.0 — Foundation
-- Search and sharing metadata: canonical URL, description, Open Graph, and Twitter card
-- Fixed portfolio destination to the `masum-billah-portfolio` repository
-- Corrected the `mailto:` link and added a mobile-friendly Copy Email action
-- Replaced non-functional `href="#"` Coming Soon links with plain status labels
-- Improved keyboard focus, skip navigation, image accessibility, narrow-screen sizing, and reduced-motion support
-- Prevented invisible content if JavaScript or scroll effects fail
-- Updated ripple placement for touch/pointer/keyboard actions and protected external links
-- Added a simple favicon, robots.txt, and sitemap.xml
+- SEO, Open Graph, robots.txt, sitemap.xml, and favicon
+- Safe external links, corrected portfolio and email links, accessible Copy Email fallback
+- Responsive and reduced-motion safeguards
 
 ## Files
-- `index.html` — site markup and metadata
-- `style.css` — responsive design, components, and accessibility
-- `script.js` — decorative ripple, optional reveal, copy email, footer year
-- `Assets/` — profile image and downloadable resume
-- `favicon.svg` — site identity mark
-- `robots.txt` / `sitemap.xml` — crawler discovery
+- `index.html` — semantic markup, content, links, and SEO
+- `style.css` — responsive visual system, cards, and accessibility
+- `script.js` — decorative ripple/reveal, Copy Email, and footer year
+- `Assets/` — existing profile PNG and resume PDF
+- `favicon.svg`, `robots.txt`, `sitemap.xml`, `LICENSE`
 
 ## Local development
 ```bash
 git clone https://github.com/gitwithmasum/gitwithmasum.github.io.git
 cd gitwithmasum.github.io
 ```
-
-Open `index.html` in a browser (or use the VS Code Live Server extension). This project uses plain HTML, CSS, and JavaScript; there is no build step.
+Open `index.html` or use VS Code Live Server. No build tools are required.
 
 ## Deployment
-GitHub Pages serves the `main` branch at https://gitwithmasum.github.io/. Verify the latest deployment under **Actions** after changes reach `main`.
+After changes reach the `main` branch, check GitHub Pages under [Actions](https://github.com/gitwithmasum/gitwithmasum.github.io/actions).
 
-## Checks before the next release
-- Confirm the bundled resume is the most recent approved CV
-- Verify that linked project **live demos**, not only their GitHub repositories, work
-- Validate responsive layout on mobile and run Lighthouse/keyboard/screen reader checks
-- Replace the relatively large profile PNG with an optimized WebP/AVIF alternative after visual QA
-- Plan new sections (Skills, Experience, Research) separately in Release 2.1+
+## Before the next release
+- Verify existing demo URLs and that the bundled resume is up to date
+- Optimize the original ~2 MB profile image without compromising appearance
+- Manually test on mobile, with a keyboard, and with reduced motion
+- Run Lighthouse on the deployed site; targets do not replace measured scores
+- Future releases can add skills, experience, project filters, and research
 
-© Muhammad Masum Billah. See LICENSE for terms.
+© Muhammad Masum Billah. See LICENSE for license terms.
