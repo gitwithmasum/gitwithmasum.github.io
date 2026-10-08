@@ -11,6 +11,16 @@ A responsive developer identity hub with a futuristic midnight-galaxy, glassmorp
 - `aurora-bachelor-demo.html` loads no authentication SDK, makes no API calls, does not register a service worker, and never reads/writes cookies, localStorage, sessionStorage, IndexedDB, or the household database.
 - The real [Aurora Bachelor application](https://github.com/gitwithmasum/Aurora-Bachelor) and its stored user information have not been modified or cleared.
 
+## Release v2.5.0 — Professional Experience Timeline + Research Showcase
+- Added an accessible, responsive experience/education/project-work milestone timeline with no fabricated job dates, titles or degree details.
+- Preserved the user-confirmed **Genex Infosys · Grameenphone Process — Live Chat** experience, university BUBT details, and the original project links.
+- Clearly labelled independent software projects as portfolio work rather than employment.
+- Kept the original AI/ML/climate research-interest cards, and added three actual computational pilot-study manuscript cards linking directly to existing PDFs hosted in `MB-Portfolio`.
+- Manuscript figures are explicitly identified as **reported results**; pilot studies are not peer-reviewed or accepted journal/conference publications.
+- Responsive research cards, PDF buttons, timeline spacing, keyboard focus and reduced-motion support.
+- Updated CSS cache version to v2.5.0; JavaScript untouched to keep v2.4 search, filters, sorting, copy email and v2.3 mobile menu behavior unchanged.
+- No changes to `MB-Portfolio`, `Aurora-Bachelor`, the Aurora Bachelor guest demo, or any backend/user information.
+
 ## Release v2.4.0 — Advanced Project Showcase
 - Instant client-side search across eight existing public projects by name, technology and description.
 - Search and category filters work together; sort by featured order, name A–Z or demo links first.
