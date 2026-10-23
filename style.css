@@ -592,3 +592,15 @@ html[data-theme="light"] .filter-status{color:#3c5570}
 .not-found-actions{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px}
 html[data-theme="light"] .not-found{background:rgba(255,255,255,.93);border-color:var(--stroke)}
 @media(max-width:480px){.not-found{margin:60px auto 80px}.not-found-actions .btn{flex:1 1 100%}}
+
+
+/* Project-specific futuristic artwork for the first three featured cards. */
+.project-art.art-chronos{--art-a:#21152f;--art-b:#94611c;background:radial-gradient(circle at 50% 48%,rgba(255,194,83,.3),transparent 32%),linear-gradient(130deg,var(--art-a),var(--art-b))}
+.project-art.art-chronos>i{font-size:3.8rem;color:#ffe3a0;text-shadow:0 0 12px rgba(255,190,69,.9),0 0 34px rgba(255,166,45,.55)}
+.project-art.art-chronos .art-orbit{width:122px;height:72px;border-radius:50%;transform:rotate(-24deg);border:1px solid rgba(255,216,132,.68);background:transparent;box-shadow:0 0 18px rgba(255,177,55,.16)}
+.project-art.art-planet{--art-a:#061b3d;--art-b:#075e91;background:radial-gradient(circle at 50% 48%,rgba(41,178,255,.32),transparent 35%),linear-gradient(130deg,var(--art-a),var(--art-b))}
+.project-art.art-planet>i{font-size:3.8rem;color:#8be4ff;text-shadow:0 0 14px rgba(37,174,255,.9),0 0 35px rgba(29,129,255,.65)}
+.project-art.art-planet .art-orbit{width:144px;height:64px;border-radius:50%;transform:rotate(-20deg);border:2px solid rgba(111,222,255,.7);background:transparent;box-shadow:0 0 18px rgba(34,172,255,.25)}
+.project-art.art-study{--art-a:#032f35;--art-b:#087c70;background:radial-gradient(circle at 50% 48%,rgba(64,255,207,.24),transparent 34%),linear-gradient(130deg,var(--art-a),var(--art-b))}
+.project-art.art-study>i{font-size:3.8rem;color:#a4ffe9;text-shadow:0 0 14px rgba(57,255,204,.85),0 0 35px rgba(16,205,164,.55)}
+.project-art.art-study .art-orbit{width:124px;height:74px;border-radius:50%;transform:rotate(18deg);border:1px solid rgba(118,255,225,.65);background:transparent;box-shadow:0 0 18px rgba(33,255,203,.18)}
